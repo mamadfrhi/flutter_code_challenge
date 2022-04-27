@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_code_challenge/bloc/home_bloc.dart';
 import 'package:flutter_code_challenge/services/PersonsServices.dart';
 
+import 'HomeListWidget.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -25,17 +27,8 @@ class HomePage extends StatelessWidget {
             }
             if (state is HomeLoadedState) {
               final persons = state.persons;
-              return ListView.builder(
-                shrinkWrap: true,
-                itemCount: state.persons.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return Card(
-                    child: ListTile(
-                      title: Text(persons[index].name!),
-                      subtitle: Text(persons[index].gender!),
-                    ),
-                  );
-                },
+              return HomeListWidget(
+                persons: persons,
               );
             }
             return Container();
