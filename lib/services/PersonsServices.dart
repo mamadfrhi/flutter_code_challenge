@@ -1,4 +1,6 @@
 import 'dart:convert';
+import 'dart:html';
+import 'package:flutter_code_challenge/models/PersonView.dart';
 import 'package:http/http.dart';
 
 import '../models/PersonsActivity.dart';
@@ -35,5 +37,24 @@ class PersonsService {
       _personsArray += persons;
     }
     return _personsArray;
+  }
+
+  List<PersonView> personsViews(List<PersonActivity> personsActivity) {
+    List<PersonView> _personsViewArray = [];
+    personsActivity.forEach((element) {
+      final newPersonView = PersonView(
+        url: element.url,
+        name: element.name,
+        gender: element.gender,
+        culture: element.culture,
+        born: element.born,
+        died: element.died,
+        father: element.father,
+        mother: element.father,
+        spouse: element.spouse,
+      );
+      _personsViewArray.add(newPersonView);
+    });
+    return _personsViewArray;
   }
 }
