@@ -28,6 +28,7 @@ class HomePage extends StatelessWidget {
             if (state is HomeLoadedState) {
               final persons = state.persons;
               return HomeListWidget(
+                parentContext: context,
                 persons: persons,
               );
             }

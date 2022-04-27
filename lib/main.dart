@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
               create: (context) => PersonsService(),
             )
           ],
-          child: HomePage(),
+          child: const HomePage(),
         ));
   }
 }
