@@ -26,11 +26,11 @@ class HomeListWidget extends StatelessWidget {
             title: Text(persons[index].name),
             subtitle: Text(persons[index].gender),
             trailing: persons[index].alive()
-                ? const Icon(
+                ? null
+                : const Icon(
                     Icons.heart_broken,
                     color: Colors.black,
-                  )
-                : null,
+                  ),
             onTap: () => persons[index].hasDetail()
                 ? _navigateToDetailPage(parentContext, persons[index])
                 : null,
