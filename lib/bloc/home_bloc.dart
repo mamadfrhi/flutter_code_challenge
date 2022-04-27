@@ -11,8 +11,9 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
   HomeBloc(this._personsService) : super(HomeLoadingState()) {
     on<GetPersonsEvent>((event, emit) async {
+      emit(HomeLoadingState());
       final persons = await _personsService.getPersons();
-      emit(HomeLoadedState(persons: persons!));
+      emit(HomeLoadedState(persons: persons));
     });
   }
 }
