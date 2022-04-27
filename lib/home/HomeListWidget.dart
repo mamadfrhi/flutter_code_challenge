@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_code_challenge/bloc/home_bloc.dart';
+import 'package:flutter_code_challenge/models/PersonView.dart';
 import '../models/PersonsActivity.dart';
 
 class HomeListWidget extends StatelessWidget {
   const HomeListWidget(
       {Key? key, required this.persons, required this.parentContext})
       : super(key: key);
-  final List<PersonActivity> persons;
+  final List<PersonView> persons;
   final BuildContext parentContext;
 
   @override

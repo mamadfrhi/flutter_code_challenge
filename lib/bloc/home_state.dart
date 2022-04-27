@@ -13,7 +13,7 @@ class HomeLoadingState extends HomeState {
 }
 
 class HomeLoadedState extends HomeState {
-  final List<PersonActivity> persons;
+  final List<PersonView> persons;
   const HomeLoadedState({required this.persons});
 
   @override
