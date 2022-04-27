@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_code_challenge/models/PersonView.dart';
 
+import 'BigText.dart';
+
 class Details extends StatelessWidget {
   final PersonView person;
   const Details({Key? key, required this.person}) : super(key: key);
@@ -9,25 +11,28 @@ class Details extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
-        title: const Text("details"),
+        title: const Text("Details"),
       ),
       body: Center(
           child: Column(
         children: [
+          const SizedBox(
+            height: 45,
+          ),
           BigText(
             text: person.name,
-          ),
-          BigText(
-            text: person.culture,
-          ),
-          BigText(
-            text: person.father,
           ),
           BigText(
             text: person.gender,
           ),
           BigText(
-            text: person.mother,
+            text: person.culture,
+          ),
+          BigText(
+            text: person.born,
+          ),
+          BigText(
+            text: person.died,
           ),
         ],
       )),
