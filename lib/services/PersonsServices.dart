@@ -21,17 +21,17 @@ String personsActivityToJson(PersonActivity data) => json.encode(data.toJson());
 
 class PersonActivity {
   PersonActivity({
-    this.url,
-    this.name,
-    this.gender,
-    this.culture,
-    this.born,
+    required this.url,
+    required this.name,
+    required this.gender,
+    required this.culture,
+    required this.born,
     required this.died,
     this.titles,
     this.aliases,
-    this.father,
-    this.mother,
-    this.spouse,
+    required this.father,
+    required this.mother,
+    required this.spouse,
     this.allegiances,
     this.books,
     this.povBooks,
@@ -39,17 +39,17 @@ class PersonActivity {
     this.playedBy,
   });
 
-  String? url;
-  String? name;
-  String? gender;
-  String? culture;
-  String? born;
-  String? died;
+  String url;
+  String name;
+  String gender;
+  String culture;
+  String born;
+  String died;
   List<String>? titles;
   List<String>? aliases;
-  String? father;
-  String? mother;
-  String? spouse;
+  String father;
+  String mother;
+  String spouse;
   List<dynamic>? allegiances;
   List<String>? books;
   List<dynamic>? povBooks;
@@ -61,7 +61,7 @@ class PersonActivity {
         name: json["name"],
         gender: json["gender"],
         //culture: json["culture"],
-        //born: json["born"],
+        born: json["born"],
         died: json["died"],
         //titles: List<String>.from(json["titles"].map((x) => x)),
         //aliases: List<String>.from(json["aliases"].map((x) => x)),
@@ -93,6 +93,38 @@ class PersonActivity {
         // "tvSeries": List<dynamic>.from(tvSeries.map((x) => x)),
         // "playedBy": List<dynamic>.from(playedBy.map((x) => x)),
       };
+}
+
+class PersonView {
+  PersonView({
+    required this.url,
+    required this.name,
+    required this.gender,
+    required this.culture,
+    required this.born,
+    required this.died,
+    required this.father,
+    required this.mother,
+    required this.spouse,
+  });
+
+  String url;
+  String name;
+  String gender;
+  String culture;
+  String born;
+  String died;
+  String father;
+  String mother;
+  String spouse;
+
+  bool hasDetail() {
+    return (father != "") && (spouse != "");
+  }
+
+  bool notAlive() {
+    return (died != "");
+  }
 }
 
 class PersonsService {
