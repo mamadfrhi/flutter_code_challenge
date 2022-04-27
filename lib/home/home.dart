@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
     return BlocProvider(
       create: ((context) => HomeBloc(
             RepositoryProvider.of<PersonsService>(context),
-          )..add(LoadApiEvent())),
+          )..add(GetPersonsEvent())),
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Persons'),
