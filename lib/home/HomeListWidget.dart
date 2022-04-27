@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_code_challenge/bloc/home_bloc.dart';
+import 'package:flutter_code_challenge/home/Details.dart';
 import 'package:flutter_code_challenge/models/PersonView.dart';
 import '../models/PersonsActivity.dart';
 
@@ -22,8 +23,15 @@ class HomeListWidget extends StatelessWidget {
         }
         return Card(
           child: ListTile(
-            title: Text(persons[index].name!),
-            subtitle: Text(persons[index].gender!),
+            title: Text(persons[index].name),
+            subtitle: Text(persons[index].gender),
+            trailing: persons[index].notAlive()
+                ? const Icon(
+                    Icons.heart_broken,
+                    color: Colors.black,
+                  )
+                : null,
+            onTap: () => _navigateToDetailPage(parentContext, persons[index]),
           ),
         );
       },
@@ -39,5 +47,12 @@ class HomeListWidget extends StatelessWidget {
           final bloc = BlocProvider.of<HomeBloc>(parentContext);
           bloc.add(GetPersonsEvent());
         });
+  }
+
+  void _navigateToDetailPage(ctx, person) async {
+    Navigator.of(ctx).push(MaterialPageRoute(
+        builder: (_) => Details(
+              person: person,
+            )));
   }
 }
