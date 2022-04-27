@@ -25,7 +25,7 @@ class HomeListWidget extends StatelessWidget {
           child: ListTile(
             title: Text(persons[index].name),
             subtitle: Text(persons[index].gender),
-            trailing: persons[index].notAlive()
+            trailing: persons[index].alive()
                 ? const Icon(
                     Icons.heart_broken,
                     color: Colors.black,

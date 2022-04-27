@@ -42,15 +42,14 @@ class PersonsService {
     List<PersonView> _personsViewArray = [];
     personsActivity.forEach((element) {
       final newPersonView = PersonView(
-        url: element.url,
-        name: element.name,
-        gender: element.gender,
-        culture: element.culture,
-        born: element.born,
-        died: element.died,
-        father: element.father,
-        mother: element.father,
-        spouse: element.spouse,
+        element.name,
+        element.gender,
+        element.culture,
+        element.born,
+        element.died,
+        element.father,
+        element.father,
+        element.spouse,
       );
       _personsViewArray.add(newPersonView);
     });
