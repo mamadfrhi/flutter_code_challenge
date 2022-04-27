@@ -96,13 +96,22 @@ class PersonActivity {
 }
 
 class PersonsService {
-  int page = 0;
-  Future<List<PersonActivity>?> getPersons() async {
-    const _baseURL = "https://www.anapioficeandfire.com/api/characters";
+  int pageNumber = 0;
+
+  List<PersonActivity> _personsArray = [];
+
+  Future<List<PersonActivity>> getPersons() async {
+    String _baseURL = "https://www.anapioficeandfire.com/api/characters";
+    pageNumber += 1;
+    _baseURL = _baseURL + "?page=" + pageNumber.toString();
     final _baseURI = Uri.parse(_baseURL);
     final response = await get(_baseURI);
     final json = response.body;
+
     final List<PersonActivity>? persons = personsActivityFromJson(json);
-    return persons;
+    if (persons != null) {
+      _personsArray += persons;
+    }
+    return _personsArray;
   }
 }
