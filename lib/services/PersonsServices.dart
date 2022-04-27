@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart';
 
-import '../home/models/PersonsActivity.dart';
+import '../models/PersonsActivity.dart';
 
 List<PersonActivity> personsActivityFromJson(String strJSON) {
   final decodedBody = json.decode(strJSON);
