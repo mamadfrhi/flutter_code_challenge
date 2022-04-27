@@ -27,7 +27,7 @@ class HomePage extends StatelessWidget {
               final persons = state.persons;
               return ListView.builder(
                 shrinkWrap: true,
-                itemCount: 8,
+                itemCount: state.persons.length,
                 itemBuilder: (BuildContext context, int index) {
                   return Card(
                     child: ListTile(
