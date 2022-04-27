@@ -31,7 +31,9 @@ class HomeListWidget extends StatelessWidget {
                     color: Colors.black,
                   )
                 : null,
-            onTap: () => _navigateToDetailPage(parentContext, persons[index]),
+            onTap: () => persons[index].hasDetail()
+                ? _navigateToDetailPage(parentContext, persons[index])
+                : null,
           ),
         );
       },
