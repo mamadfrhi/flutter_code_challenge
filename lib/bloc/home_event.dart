@@ -7,7 +7,7 @@ abstract class HomeEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class GetPersonsEvent extends HomeEvent {
+class FetchPersonsEvent extends HomeEvent {
   @override
   List<Object> get props => [];
 }

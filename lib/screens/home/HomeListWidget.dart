@@ -47,7 +47,7 @@ class HomeListWidget extends StatelessWidget {
         ),
         onPressed: () {
           final bloc = BlocProvider.of<HomeBloc>(parentContext);
-          bloc.add(GetPersonsEvent());
+          bloc.add(FetchPersonsEvent());
         });
   }
 
