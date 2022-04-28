@@ -16,7 +16,7 @@ class PersonsService {
     final response = await get(_baseURI);
     final json = response.body;
 
-    final List<Person>? persons = personsActivityFromJson(json);
+    final List<Person>? persons = personsFromJson(json);
     if (persons != null) {
       _personsArray += persons;
     }
@@ -27,7 +27,7 @@ class PersonsService {
   // Conversion methods
   //
 
-  List<PersonView> personsViews(List<Person> personsModel) {
+  List<PersonView> personsViewsFromPersons(List<Person> personsModel) {
     List<PersonView> _personsViewArray = [];
     for (var person in personsModel) {
       final personView = PersonView(
@@ -47,7 +47,7 @@ class PersonsService {
     return _personsViewArray;
   }
 
-  List<Person> personsActivityFromJson(String strJSON) {
+  List<Person> personsFromJson(String strJSON) {
     final decodedBody = json.decode(strJSON);
     List<Person> _persons = [];
     decodedBody.forEach(
