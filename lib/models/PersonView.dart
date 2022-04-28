@@ -36,15 +36,15 @@ class PersonView {
     return [""];
   }
 
-  String get titles {
+  List<String> get titles {
     if (_titles.isNotEmpty) {
-      var str = "";
+      List<String> titles = [];
       for (var title in _titles) {
-        str += titles + "\n";
+        titles.add(title + "\n");
       }
-      return str;
+      return titles;
     }
-    return "";
+    return [""];
   }
 
   String get name {
