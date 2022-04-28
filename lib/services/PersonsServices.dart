@@ -4,15 +4,11 @@ import 'package:http/http.dart';
 import '../models/Person.dart';
 
 class PersonsService {
-  //
-  // Peroperteis
-  //
+  /// Peroperteis
   int _pageNumber = 0;
   List<Person> _personsArray = [];
 
-  //
-  // API calls
-  //
+  /// API calls
   Future<List<Person>> fetchPersons() async {
     String _baseURL = "https://www.anapioficeandfire.com/api/characters";
     _pageNumber += 1;
@@ -26,9 +22,7 @@ class PersonsService {
     return _personsArray;
   }
 
-  //
-  // Conversion methods
-  //
+  /// Conversion methods
   List<PersonView> personsViewsFromPersons(List<Person> personsModel) {
     List<PersonView> _personsViewArray = [];
     for (var person in personsModel) {
