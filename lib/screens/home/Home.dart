@@ -14,7 +14,6 @@ class HomePage extends StatelessWidget {
       create: ((context) => HomeBloc(
             RepositoryProvider.of<PersonsService>(context),
           )..add(
-              // tring get event
               FetchPersonsEvent(),
             )),
       child: Scaffold(
