@@ -12,13 +12,12 @@ class GenderIconWidget extends StatelessWidget {
         size: 50,
         color: Colors.blue,
       );
-    } else {
-      return const Icon(
-        Icons.female,
-        size: 50,
-        color: Colors.pink,
-      );
     }
+    return const Icon(
+      Icons.female,
+      size: 50,
+      color: Colors.pink,
+    );
   }
 }
 
