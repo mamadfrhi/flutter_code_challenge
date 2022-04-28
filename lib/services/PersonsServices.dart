@@ -27,21 +27,23 @@ class PersonsService {
   // Conversion methods
   //
 
-  List<PersonView> personsViews(List<Person> personsActivity) {
+  List<PersonView> personsViews(List<Person> personsModel) {
     List<PersonView> _personsViewArray = [];
-    personsActivity.forEach((element) {
-      final newPersonView = PersonView(
-        element.name,
-        element.gender,
-        element.culture,
-        element.born,
-        element.died,
-        element.father,
-        element.father,
-        element.spouse,
+    for (var person in personsModel) {
+      final personView = PersonView(
+        person.titles!,
+        person.aliases!,
+        person.name,
+        person.gender,
+        person.culture,
+        person.born,
+        person.died,
+        person.father,
+        person.father,
+        person.spouse,
       );
-      _personsViewArray.add(newPersonView);
-    });
+      _personsViewArray.add(personView);
+    }
     return _personsViewArray;
   }
 
