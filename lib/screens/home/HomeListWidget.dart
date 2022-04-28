@@ -24,7 +24,7 @@ class HomeListWidget extends StatelessWidget {
         return Card(
           child: ListTile(
             title: Text(persons[index].name),
-            subtitle: Text(persons[index].gender),
+            subtitle: Text(persons[index].gender.toString()),
             trailing: persons[index].alive()
                 ? null
                 : const Icon(

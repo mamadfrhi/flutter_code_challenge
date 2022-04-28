@@ -56,8 +56,11 @@ class PersonView {
     return _name;
   }
 
-  String get gender {
-    return _gender;
+  Gender get gender {
+    if (_gender == "Male") {
+      return Gender.male;
+    }
+    return Gender.female;
   }
 
   String get culture {
