@@ -1,16 +1,17 @@
-# flutter_code_challenge
+## What is it? 🙋🏻
+It's a flutter application written as a code challenge?
 
-A new Flutter project.
+## The usage❓
+You can see how am I care about modularity, testability and clean code principle while I'm coding.
 
-## Getting Started
+## Main Points
+1. Used BLoC architecture
+2. Used different design patterns such as singleton, factory, decorator etc.
+3. Request to a server and show responses
 
-This project is a starting point for a Flutter application.
+## Show me the result 🤩
 
-A few resources to get you started if this is your first Flutter project:
+##### iOS📱 & Android🤖
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+https://user-images.githubusercontent.com/28094207/165769264-603520e0-9f83-4bd5-a03c-247e3eb84ca3.mp4
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
