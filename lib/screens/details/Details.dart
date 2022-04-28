@@ -1,10 +1,9 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:flutter_code_challenge/models/PersonView.dart';
-import 'package:flutter_code_challenge/screens/details/BigTextWidget.dart';
-import 'package:flutter_code_challenge/screens/details/IconWidget.dart';
-
-import 'IconTextWidget.dart';
+import 'package:flutter_code_challenge/screens/details/widgets/BigTextWidget.dart';
+import 'package:flutter_code_challenge/screens/details/widgets/IconWidget.dart';
+import 'widgets/IconTextWidget.dart';
 
 class Details extends StatelessWidget {
   final PersonView person;

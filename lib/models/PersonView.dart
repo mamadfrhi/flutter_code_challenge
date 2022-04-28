@@ -1,4 +1,4 @@
-import 'package:flutter_code_challenge/screens/details/IconWidget.dart';
+import 'package:flutter_code_challenge/screens/details/widgets/IconWidget.dart';
 
 class PersonView {
   final List<String> _titles;
