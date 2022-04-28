@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_code_challenge/models/PersonView.dart';
 import 'package:flutter_code_challenge/screens/details/widgets/BigTextWidget.dart';
-import 'package:flutter_code_challenge/screens/details/widgets/IconWidget.dart';
+import 'package:flutter_code_challenge/screens/details/widgets/GenderIconWidget.dart';
 import '../../resources/TitlesContainer.dart';
 import 'widgets/IconTextWidget.dart';
 
