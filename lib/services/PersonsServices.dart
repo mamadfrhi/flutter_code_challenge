@@ -4,14 +4,19 @@ import 'package:http/http.dart';
 import '../models/Person.dart';
 
 class PersonsService {
-  int pageNumber = 0;
-
+  //
+  // Peroperteis
+  //
+  int _pageNumber = 0;
   List<Person> _personsArray = [];
 
+  //
+  // API calls
+  //
   Future<List<Person>> getPersons() async {
     String _baseURL = "https://www.anapioficeandfire.com/api/characters";
-    pageNumber += 1;
-    _baseURL = _baseURL + "?page=" + pageNumber.toString();
+    _pageNumber += 1;
+    _baseURL = _baseURL + "?page=" + _pageNumber.toString();
     final _baseURI = Uri.parse(_baseURL);
     final response = await get(_baseURI);
     final json = response.body;
