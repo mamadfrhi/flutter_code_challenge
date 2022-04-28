@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter_code_challenge/models/PersonView.dart';
 import 'package:http/http.dart';
-import '../models/PersonsActivity.dart';
+import '../models/Person.dart';
 
 class PersonsService {
   int pageNumber = 0;
