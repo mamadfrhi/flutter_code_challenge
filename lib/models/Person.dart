@@ -24,11 +24,6 @@ class Person {
   String father;
   String mother;
   String spouse;
-  List<dynamic>? allegiances;
-  List<String>? books;
-  List<dynamic>? povBooks;
-  List<String>? tvSeries;
-  List<String>? playedBy;
 
   factory Person.fromJson(Map<String, dynamic> json) => Person(
       url: json["url"],
