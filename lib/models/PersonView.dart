@@ -28,7 +28,6 @@ class PersonView {
 
   List<String> get aliases {
     if (_aliases.isNotEmpty && _aliases.first != "") {
-      // check empty
       List<String> aliases = [];
       for (var alias in _aliases) {
         if (alias.isNotEmpty) {
