@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_code_challenge/bloc/home_bloc.dart';
@@ -32,9 +33,7 @@ class HomeListWidget extends StatelessWidget {
                     color: Colors.black,
                   ),
             enabled: persons[index].hasDetail(),
-            onTap: () => persons[index].hasDetail()
-                ? _navigateToDetailPage(parentContext, persons[index])
-                : null,
+            onTap: () => _navigateToDetailPage(parentContext, persons[index]),
           ),
         );
       },
@@ -53,9 +52,12 @@ class HomeListWidget extends StatelessWidget {
   }
 
   void _navigateToDetailPage(ctx, person) async {
-    Navigator.of(ctx).push(MaterialPageRoute(
+    Navigator.of(ctx).push(
+      MaterialPageRoute(
         builder: (_) => Details(
-              person: person,
-            )));
+          person: person,
+        ),
+      ),
+    );
   }
 }
