@@ -1,5 +1,5 @@
-class PersonActivity {
-  PersonActivity({
+class Person {
+  Person({
     required this.url,
     required this.name,
     required this.gender,
@@ -35,7 +35,7 @@ class PersonActivity {
   List<String>? tvSeries;
   List<String>? playedBy;
 
-  factory PersonActivity.fromJson(Map<String, dynamic> json) => PersonActivity(
+  factory Person.fromJson(Map<String, dynamic> json) => Person(
         url: json["url"],
         name: json["name"],
         gender: json["gender"],
@@ -53,23 +53,4 @@ class PersonActivity {
         //tvSeries: List<String>.from(json["tvSeries"].map((x) => x)),
         //playedBy: List<String>.from(json["playedBy"].map((x) => x)),
       );
-
-  Map<String, dynamic> toJson() => {
-        "url": url,
-        "name": name,
-        "gender": gender,
-        "culture": culture,
-        "born": born,
-        "died": died,
-        // "titles": List<dynamic>.from(titles.map((x) => x)),
-        // "aliases": List<dynamic>.from(aliases.map((x) => x)),
-        "father": father,
-        "mother": mother,
-        "spouse": spouse,
-        // "allegiances": List<dynamic>.from(allegiances.map((x) => x)),
-        // "books": List<dynamic>.from(books.map((x) => x)),
-        // "povBooks": List<dynamic>.from(povBooks.map((x) => x)),
-        // "tvSeries": List<dynamic>.from(tvSeries.map((x) => x)),
-        // "playedBy": List<dynamic>.from(playedBy.map((x) => x)),
-      };
 }
