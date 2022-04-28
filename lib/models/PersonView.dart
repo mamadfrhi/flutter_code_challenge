@@ -64,6 +64,9 @@ class PersonView {
   }
 
   String get culture {
+    if (_culture == "") {
+      return "Not specified!";
+    }
     return _culture;
   }
 
