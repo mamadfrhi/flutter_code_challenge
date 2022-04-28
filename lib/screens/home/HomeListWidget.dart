@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_code_challenge/bloc/home_bloc.dart';
-import 'package:flutter_code_challenge/home/Details.dart';
 import 'package:flutter_code_challenge/models/PersonView.dart';
-import '../models/PersonsActivity.dart';
+
+import '../details/Details.dart';
 
 class HomeListWidget extends StatelessWidget {
   const HomeListWidget(

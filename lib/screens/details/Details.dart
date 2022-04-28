@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_code_challenge/models/PersonView.dart';
 
-import 'BigText.dart';
+import '../../Screens/BigText.dart';
 
 class Details extends StatelessWidget {
   final PersonView person;
