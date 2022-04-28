@@ -4,7 +4,7 @@ import 'package:http/http.dart';
 import '../models/Person.dart';
 
 class PersonsService {
-  int pageNumber = 0;
+  int pageNumber = 4;
 
   List<Person> _personsArray = [];
 

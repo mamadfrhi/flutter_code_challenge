@@ -35,12 +35,12 @@ class Details extends StatelessWidget {
                 text: 'Name: ' + person.name,
               ),
               // gender
-              IconWidget(
+              GenderIconWidget(
                   gender:
                       (person.gender == "Male") ? Gender.male : Gender.female),
               // culture
               BigText(
-                text: titleContainer.cultureTitle + person.culture,
+                text: "Culture:" + person.culture,
               ),
               // born
               IconTextWidget(
