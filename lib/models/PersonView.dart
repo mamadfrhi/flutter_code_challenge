@@ -22,6 +22,9 @@ class PersonView {
       this._mother,
       this._spouse);
 
+//
+//  Getter / Setters
+//
   List<String> get aliases {
     if (_aliases.isNotEmpty) {
       List<String> aliases = [];
@@ -79,6 +82,10 @@ class PersonView {
   String get spouse {
     return _spouse;
   }
+
+//
+//  Custom perperties
+//
 
   bool hasDetail() {
     return (_father != "") && (_spouse != "");
