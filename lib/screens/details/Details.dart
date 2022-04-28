@@ -60,9 +60,7 @@ class Details extends StatelessWidget {
   }
 }
 
-//
-//  Titles Container
-//
+///  Titles Container
 class DetailsTitleContainer {
   static DetailsTitleContainer shared = DetailsTitleContainer(); // singleton
 
