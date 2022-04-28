@@ -21,10 +21,8 @@ class PersonsService {
     final response = await get(_baseURI);
     final json = response.body;
 
-    final List<Person>? persons = personsFromJson(json);
-    if (persons != null) {
-      _personsArray += persons;
-    }
+    final List<Person> persons = personsFromJson(json);
+    _personsArray += persons;
     return _personsArray;
   }
 
