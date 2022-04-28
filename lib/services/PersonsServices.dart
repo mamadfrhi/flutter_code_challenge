@@ -1,29 +1,14 @@
 import 'dart:convert';
 import 'package:flutter_code_challenge/models/PersonView.dart';
 import 'package:http/http.dart';
-
-import '../models/PersonsActivity.dart';
-
-List<PersonActivity> personsActivityFromJson(String strJSON) {
-  final decodedBody = json.decode(strJSON);
-  List<PersonActivity> _persons = [];
-  decodedBody.forEach(
-    (person) {
-      final newPerson = PersonActivity.fromJson(person);
-      _persons.add(newPerson);
-    },
-  );
-  return _persons;
-}
-
-String personsActivityToJson(PersonActivity data) => json.encode(data.toJson());
+import '../models/Person.dart';
 
 class PersonsService {
-  int pageNumber = 0;
+  int pageNumber = 4;
 
-  List<PersonActivity> _personsArray = [];
+  List<Person> _personsArray = [];
 
-  Future<List<PersonActivity>> getPersons() async {
+  Future<List<Person>> getPersons() async {
     String _baseURL = "https://www.anapioficeandfire.com/api/characters";
     pageNumber += 1;
     _baseURL = _baseURL + "?page=" + pageNumber.toString();
@@ -31,28 +16,46 @@ class PersonsService {
     final response = await get(_baseURI);
     final json = response.body;
 
-    final List<PersonActivity>? persons = personsActivityFromJson(json);
+    final List<Person>? persons = personsFromJson(json);
     if (persons != null) {
       _personsArray += persons;
     }
     return _personsArray;
   }
 
-  List<PersonView> personsViews(List<PersonActivity> personsActivity) {
+  //
+  // Conversion methods
+  //
+
+  List<PersonView> personsViewsFromPersons(List<Person> personsModel) {
     List<PersonView> _personsViewArray = [];
-    personsActivity.forEach((element) {
-      final newPersonView = PersonView(
-        element.name,
-        element.gender,
-        element.culture,
-        element.born,
-        element.died,
-        element.father,
-        element.father,
-        element.spouse,
+    for (var person in personsModel) {
+      final personView = PersonView(
+        person.titles!,
+        person.aliases!,
+        person.name,
+        person.gender,
+        person.culture,
+        person.born,
+        person.died,
+        person.father,
+        person.father,
+        person.spouse,
       );
-      _personsViewArray.add(newPersonView);
-    });
+      _personsViewArray.add(personView);
+    }
     return _personsViewArray;
+  }
+
+  List<Person> personsFromJson(String strJSON) {
+    final decodedBody = json.decode(strJSON);
+    List<Person> _persons = [];
+    decodedBody.forEach(
+      (person) {
+        final newPerson = Person.fromJson(person);
+        _persons.add(newPerson);
+      },
+    );
+    return _persons;
   }
 }

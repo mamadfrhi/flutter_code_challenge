@@ -1,9 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_code_challenge/models/PersonView.dart';
-import '../models/PersonsActivity.dart';
 import '../services/PersonsServices.dart';
-
 part 'home_event.dart';
 part 'home_state.dart';
 
@@ -14,7 +12,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<GetPersonsEvent>((event, emit) async {
       emit(HomeLoadingState());
       final persons = await _personsService.getPersons();
-      final personsView = _personsService.personsViews(persons);
+      final personsView = _personsService.personsViewsFromPersons(persons);
       emit(HomeLoadedState(persons: personsView));
     });
   }

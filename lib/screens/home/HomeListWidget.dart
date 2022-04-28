@@ -1,9 +1,10 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_code_challenge/bloc/home_bloc.dart';
-import 'package:flutter_code_challenge/home/Details.dart';
 import 'package:flutter_code_challenge/models/PersonView.dart';
-import '../models/PersonsActivity.dart';
+
+import '../details/Details.dart';
 
 class HomeListWidget extends StatelessWidget {
   const HomeListWidget(
@@ -24,16 +25,15 @@ class HomeListWidget extends StatelessWidget {
         return Card(
           child: ListTile(
             title: Text(persons[index].name),
-            subtitle: Text(persons[index].gender),
+            subtitle: Text(persons[index].gender.toString()),
             trailing: persons[index].alive()
                 ? null
                 : const Icon(
                     Icons.heart_broken,
                     color: Colors.black,
                   ),
-            onTap: () => persons[index].hasDetail()
-                ? _navigateToDetailPage(parentContext, persons[index])
-                : null,
+            enabled: persons[index].hasDetail(),
+            onTap: () => _navigateToDetailPage(parentContext, persons[index]),
           ),
         );
       },
@@ -52,9 +52,12 @@ class HomeListWidget extends StatelessWidget {
   }
 
   void _navigateToDetailPage(ctx, person) async {
-    Navigator.of(ctx).push(MaterialPageRoute(
+    Navigator.of(ctx).push(
+      MaterialPageRoute(
         builder: (_) => Details(
-              person: person,
-            )));
+          person: person,
+        ),
+      ),
+    );
   }
 }
