@@ -17,7 +17,9 @@ class IconTextWidget extends StatelessWidget {
           size: 50,
           color: Colors.black,
         ),
-        BigText(text: text)
+        Expanded(
+          child: BigText(text: text),
+        )
       ],
     );
   }
