@@ -10,6 +10,7 @@ class BigText extends StatelessWidget {
     return Text(
       text,
       style: const TextStyle(fontSize: 25),
+      maxLines: 6,
     );
   }
 }
