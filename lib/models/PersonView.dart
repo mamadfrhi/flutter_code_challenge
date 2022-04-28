@@ -1,3 +1,5 @@
+import 'package:flutter_code_challenge/screens/details/IconWidget.dart';
+
 class PersonView {
   final List<String> _titles;
   final List<String> _aliases;
@@ -50,9 +52,8 @@ class PersonView {
   String get name {
     if (_name == "") {
       return "No Name";
-    } else {
-      return _name;
     }
+    return _name;
   }
 
   String get gender {
