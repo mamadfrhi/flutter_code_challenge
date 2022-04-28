@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 
 class BigText extends StatelessWidget {
@@ -8,7 +9,7 @@ class BigText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(fontSize: 25),
+      style: const TextStyle(fontSize: 25),
     );
   }
 }
