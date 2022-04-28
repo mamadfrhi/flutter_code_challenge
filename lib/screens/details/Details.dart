@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_code_challenge/models/PersonView.dart';
-
-import '../../Screens/BigText.dart';
+import 'package:flutter_code_challenge/screens/details/BigTextWidget.dart';
 
 class Details extends StatelessWidget {
   final PersonView person;
@@ -10,7 +9,7 @@ class Details extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: new AppBar(
+      appBar: AppBar(
         title: const Text("Details"),
       ),
       body: Center(

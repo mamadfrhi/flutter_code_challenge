@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_code_challenge/bloc/home_bloc.dart';
+import 'package:flutter_code_challenge/screens/home/HomeListWidget.dart';
 import 'package:flutter_code_challenge/services/PersonsServices.dart';
-
-import '../../Screens/HomeListWidget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
