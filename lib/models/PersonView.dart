@@ -1,6 +1,6 @@
-import 'package:http/http.dart';
-
 class PersonView {
+  final List<String> _titles;
+  final List<String> _aliases;
   final String _name;
   final String _gender;
   final String _culture;
@@ -10,8 +10,39 @@ class PersonView {
   final String _mother;
   final String _spouse;
 
-  PersonView(this._name, this._gender, this._culture, this._born, this._died,
-      this._father, this._mother, this._spouse);
+  PersonView(
+      this._titles,
+      this._aliases,
+      this._name,
+      this._gender,
+      this._culture,
+      this._born,
+      this._died,
+      this._father,
+      this._mother,
+      this._spouse);
+
+  List<String> get aliases {
+    if (_aliases.isNotEmpty) {
+      List<String> aliases = [];
+      for (var alias in _aliases) {
+        aliases.add(alias + "\n");
+      }
+      return aliases;
+    }
+    return [""];
+  }
+
+  String get titles {
+    if (_titles.isNotEmpty) {
+      var str = "";
+      for (var title in _titles) {
+        str += titles + "\n";
+      }
+      return str;
+    }
+    return "";
+  }
 
   String get name {
     if (_name == "") {
