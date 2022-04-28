@@ -20,41 +20,39 @@ class Details extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(25),
-        child: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              // aliases
-              BigText(
-                text:
-                    _detailsTitleContainer.aliasesTitle + person.aliases.join(),
-              ),
-              // titles
-              BigText(
-                text: _detailsTitleContainer.titlesTitle + person.titles.join(),
-              ),
-              // name
-              BigText(
-                text: _detailsTitleContainer.nameTitle + person.name,
-              ),
-              // gender
-              GenderIconWidget(gender: person.gender),
-              // culture
-              BigText(
-                text: _detailsTitleContainer.cultureTitle + person.culture,
-              ),
-              // born
-              IconTextWidget(
-                iconData: Icons.child_care,
-                text: person.born,
-              ),
-              // died
-              IconTextWidget(
-                iconData: Icons.dangerous,
-                text: person.died,
-              ),
-            ],
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // aliases
+            BigText(
+              text: _detailsTitleContainer.aliasesTitle + person.aliases.join(),
+            ),
+            // titles
+            BigText(
+              text: _detailsTitleContainer.titlesTitle + person.titles.join(),
+            ),
+            // name
+            BigText(
+              text: _detailsTitleContainer.nameTitle + person.name,
+            ),
+            // gender
+            GenderIconWidget(gender: person.gender),
+            // culture
+            BigText(
+              text: _detailsTitleContainer.cultureTitle + person.culture,
+            ),
+            // born
+            IconTextWidget(
+              iconData: Icons.child_care,
+              text: person.born,
+            ),
+            // died
+            IconTextWidget(
+              iconData: Icons.dangerous,
+              text: person.died,
+            ),
+          ],
         ),
       ),
     );
