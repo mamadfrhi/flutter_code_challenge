@@ -9,7 +9,7 @@ class PersonsService {
   List<Person> _personsArray = [];
 
   /// API calls
-  Future<List<Person>> fetchPersons() async {
+  Future<List<Person>> fetchNextPagePersons() async {
     String _baseURL = "https://www.anapioficeandfire.com/api/characters";
     _pageNumber += 1;
     _baseURL = _baseURL + "?page=" + _pageNumber.toString();
