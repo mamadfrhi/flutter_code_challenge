@@ -8,7 +8,9 @@ import 'IconTextWidget.dart';
 
 class Details extends StatelessWidget {
   final PersonView person;
-  const Details({Key? key, required this.person}) : super(key: key);
+  final DetailsTitleContainer _detailsTitleContainer =
+      DetailsTitleContainer.shared;
+  Details({Key? key, required this.person}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,15 +26,16 @@ class Details extends StatelessWidget {
             children: [
               // aliases
               BigText(
-                text: 'Aliases:\n' + person.aliases.join(),
+                text:
+                    _detailsTitleContainer.aliasesTitle + person.aliases.join(),
               ),
               // titles
               BigText(
-                text: 'Titles:\n' + person.titles.join(),
+                text: _detailsTitleContainer.titlesTitle + person.titles.join(),
               ),
               // name
               BigText(
-                text: 'Name: ' + person.name,
+                text: _detailsTitleContainer.nameTitle + person.name,
               ),
               // gender
               GenderIconWidget(
@@ -40,7 +43,7 @@ class Details extends StatelessWidget {
                       (person.gender == "Male") ? Gender.male : Gender.female),
               // culture
               BigText(
-                text: "Culture:" + person.culture,
+                text: _detailsTitleContainer.cultureTitle + person.culture,
               ),
               // born
               IconTextWidget(
@@ -58,4 +61,13 @@ class Details extends StatelessWidget {
       ),
     );
   }
+}
+
+class DetailsTitleContainer {
+  static DetailsTitleContainer shared = DetailsTitleContainer(); // singleton
+
+  String aliasesTitle = 'Aliases:\n';
+  String titlesTitle = 'Titles:\n';
+  String nameTitle = 'Name: ';
+  String cultureTitle = 'Culture: ';
 }
