@@ -74,10 +74,16 @@ class PersonView {
   }
 
   String get born {
+    if (_born == "") {
+      return "Not specified!";
+    }
     return _born;
   }
 
   String get died {
+    if (_died == "") {
+      return "Not specified!";
+    }
     return _died;
   }
 
