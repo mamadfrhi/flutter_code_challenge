@@ -37,9 +37,7 @@ class Details extends StatelessWidget {
                 text: _detailsTitleContainer.nameTitle + person.name,
               ),
               // gender
-              GenderIconWidget(
-                  gender:
-                      (person.gender == "Male") ? Gender.male : Gender.female),
+              GenderIconWidget(gender: person.gender),
               // culture
               BigText(
                 text: _detailsTitleContainer.cultureTitle + person.culture,
