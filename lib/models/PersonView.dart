@@ -28,7 +28,8 @@ class PersonView {
 //  Getter / Setters
 //
   List<String> get aliases {
-    if (_aliases.isNotEmpty) {
+    if (_aliases.length > 0 && _aliases.first != "") {
+      // check empty
       List<String> aliases = [];
       for (var alias in _aliases) {
         if (alias.isNotEmpty) {
