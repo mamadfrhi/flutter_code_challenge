@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
             RepositoryProvider.of<PersonsService>(context),
           )..add(
               // tring get event
-              GetPersonsEvent(),
+              FetchPersonsEvent(),
             )),
       child: Scaffold(
         appBar: AppBar(
