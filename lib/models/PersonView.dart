@@ -31,11 +31,13 @@ class PersonView {
     if (_aliases.isNotEmpty) {
       List<String> aliases = [];
       for (var alias in _aliases) {
-        aliases.add(alias + "\n");
+        if (alias.isNotEmpty) {
+          aliases.add(alias + "\n");
+        }
       }
       return aliases;
     }
-    return [""];
+    return ["No aliases specified!"];
   }
 
   List<String> get titles {
