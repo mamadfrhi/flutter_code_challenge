@@ -31,7 +31,6 @@ class PersonsService {
   //
   // Conversion methods
   //
-
   List<PersonView> personsViewsFromPersons(List<Person> personsModel) {
     List<PersonView> _personsViewArray = [];
     for (var person in personsModel) {
