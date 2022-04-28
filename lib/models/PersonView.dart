@@ -1,4 +1,4 @@
-import 'package:flutter_code_challenge/screens/details/widgets/IconWidget.dart';
+import '../resources/GenderEnum.dart';
 
 class PersonView {
   final List<String> _titles;
@@ -24,12 +24,10 @@ class PersonView {
       this._mother,
       this._spouse);
 
-//
-//  Getter / Setters
-//
+  ///  Getter / Setters
+
   List<String> get aliases {
     if (_aliases.isNotEmpty && _aliases.first != "") {
-      // check empty
       List<String> aliases = [];
       for (var alias in _aliases) {
         if (alias.isNotEmpty) {
@@ -74,10 +72,16 @@ class PersonView {
   }
 
   String get born {
+    if (_born == "") {
+      return "Not specified!";
+    }
     return _born;
   }
 
   String get died {
+    if (_died == "") {
+      return "Not specified!";
+    }
     return _died;
   }
 
@@ -93,9 +97,7 @@ class PersonView {
     return _spouse;
   }
 
-//
-//  Custom perperties
-//
+  ///  Custom perperties
 
   bool hasDetail() {
     return (_father != "") && (_spouse != "");

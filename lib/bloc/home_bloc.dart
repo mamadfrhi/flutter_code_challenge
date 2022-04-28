@@ -11,7 +11,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   HomeBloc(this._personsService) : super(HomeLoadingState()) {
     on<FetchPersonsEvent>((event, emit) async {
       emit(HomeLoadingState());
-      final persons = await _personsService.fetchPersons();
+      final persons = await _personsService.fetchNextPagePersons();
       final personsView = _personsService.personsViewsFromPersons(persons);
       emit(HomeLoadedState(persons: personsView));
     });

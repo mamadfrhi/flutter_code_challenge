@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_code_challenge/models/PersonView.dart';
 import 'package:flutter_code_challenge/screens/details/widgets/BigTextWidget.dart';
 import 'package:flutter_code_challenge/screens/details/widgets/IconWidget.dart';
+import '../../resources/TitlesContainer.dart';
 import 'widgets/IconTextWidget.dart';
 
 class Details extends StatelessWidget {
@@ -58,16 +59,4 @@ class Details extends StatelessWidget {
       ),
     );
   }
-}
-
-//
-//  Titles Container
-//
-class DetailsTitleContainer {
-  static DetailsTitleContainer shared = DetailsTitleContainer(); // singleton
-
-  String aliasesTitle = 'Aliases:\n';
-  String titlesTitle = 'Titles:\n';
-  String nameTitle = 'Name: ';
-  String cultureTitle = 'Culture: ';
 }
