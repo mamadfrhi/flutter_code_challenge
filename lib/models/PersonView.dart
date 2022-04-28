@@ -24,9 +24,8 @@ class PersonView {
       this._mother,
       this._spouse);
 
-//
-//  Getter / Setters
-//
+  ///  Getter / Setters
+
   List<String> get aliases {
     if (_aliases.isNotEmpty && _aliases.first != "") {
       // check empty
@@ -99,9 +98,7 @@ class PersonView {
     return _spouse;
   }
 
-//
-//  Custom perperties
-//
+  ///  Custom perperties
 
   bool hasDetail() {
     return (_father != "") && (_spouse != "");
