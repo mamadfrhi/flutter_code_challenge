@@ -31,6 +31,7 @@ class HomeListWidget extends StatelessWidget {
                     Icons.heart_broken,
                     color: Colors.black,
                   ),
+            enabled: persons[index].hasDetail(),
             onTap: () => persons[index].hasDetail()
                 ? _navigateToDetailPage(parentContext, persons[index])
                 : null,
