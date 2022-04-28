@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../resources/GenderEnum.dart';
 
 class GenderIconWidget extends StatelessWidget {
   final Gender gender;
@@ -20,5 +21,3 @@ class GenderIconWidget extends StatelessWidget {
     );
   }
 }
-
-enum Gender { male, female }

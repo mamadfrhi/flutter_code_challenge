@@ -1,4 +1,4 @@
-import 'package:flutter_code_challenge/screens/details/widgets/IconWidget.dart';
+import '../resources/GenderEnum.dart';
 
 class PersonView {
   final List<String> _titles;
