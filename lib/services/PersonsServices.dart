@@ -18,7 +18,7 @@ class PersonsService {
     final json = response.body;
 
     final List<Person> persons = personsFromJson(json);
-    _personsArray += persons;
+    _personsArray += persons; // append newly received person
     return _personsArray;
   }
 
