@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'BigTextWidget.dart';
+import 'BigText.dart';
 
-class IconTextWidget extends StatelessWidget {
+class IconText extends StatelessWidget {
   final IconData iconData;
   final String text;
-  const IconTextWidget({Key? key, required this.iconData, required this.text})
+  const IconText({Key? key, required this.iconData, required this.text})
       : super(key: key);
 
   @override

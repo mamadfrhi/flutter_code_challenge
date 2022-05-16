@@ -1,10 +1,10 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:flutter_code_challenge/models/PersonView.dart';
-import 'package:flutter_code_challenge/screens/details/widgets/BigTextWidget.dart';
-import 'package:flutter_code_challenge/screens/details/widgets/GenderIconWidget.dart';
+import 'package:flutter_code_challenge/screens/details/widgets/BigText.dart';
+import 'package:flutter_code_challenge/screens/details/widgets/GenderIcon.dart';
 import '../../resources/TitlesContainer.dart';
-import 'widgets/IconTextWidget.dart';
+import 'widgets/IconText.dart';
 
 class Details extends StatelessWidget {
   final PersonView person;
@@ -37,18 +37,18 @@ class Details extends StatelessWidget {
               text: _detailsTitleContainer.nameTitle + person.name,
             ),
             // gender
-            GenderIconWidget(gender: person.gender),
+            GenderIcon(gender: person.gender),
             // culture
             BigText(
               text: _detailsTitleContainer.cultureTitle + person.culture,
             ),
             // born
-            IconTextWidget(
+            IconText(
               iconData: Icons.child_care,
               text: person.born,
             ),
             // died
-            IconTextWidget(
+            IconText(
               iconData: Icons.dangerous,
               text: person.died,
             ),
