@@ -1,10 +1,10 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
-import 'package:flutter_code_challenge/models/PersonView.dart';
-import 'package:flutter_code_challenge/screens/details/widgets/BigText.dart';
-import 'package:flutter_code_challenge/screens/details/widgets/GenderIcon.dart';
-import '../../resources/TitlesContainer.dart';
-import 'widgets/IconText.dart';
+import 'package:flutter_code_challenge/models/person_view.dart';
+import 'package:flutter_code_challenge/screens/details/widgets/big_text.dart';
+import 'package:flutter_code_challenge/screens/details/widgets/gender_icon.dart';
+import 'package:flutter_code_challenge/screens/details/widgets/icon_text.dart';
+import '../../resources/detail_titles_container.dart';
 
 class Details extends StatelessWidget {
   final PersonView person;
