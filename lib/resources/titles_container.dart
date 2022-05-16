@@ -1,5 +1,5 @@
-class DetailsTitleContainer {
-  static DetailsTitleContainer shared = DetailsTitleContainer(); // singleton
+class TitlesContainer {
+  static TitlesContainer shared = TitlesContainer(); // singleton
 
   String aliasesTitle = 'Aliases:\n';
   String titlesTitle = 'Titles:\n';

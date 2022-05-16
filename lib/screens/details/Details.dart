@@ -4,12 +4,11 @@ import 'package:flutter_code_challenge/models/person_view.dart';
 import 'package:flutter_code_challenge/screens/details/widgets/big_text.dart';
 import 'package:flutter_code_challenge/screens/details/widgets/gender_icon.dart';
 import 'package:flutter_code_challenge/screens/details/widgets/icon_text.dart';
-import '../../resources/detail_titles_container.dart';
+import '../../resources/titles_container.dart';
 
 class Details extends StatelessWidget {
   final PersonView person;
-  final DetailsTitleContainer _detailsTitleContainer =
-      DetailsTitleContainer.shared;
+  final TitlesContainer _titlesContainer = TitlesContainer.shared;
   Details({Key? key, required this.person}) : super(key: key);
 
   @override
@@ -26,21 +25,21 @@ class Details extends StatelessWidget {
           children: [
             // aliases
             BigText(
-              text: _detailsTitleContainer.aliasesTitle + person.aliases.join(),
+              text: _titlesContainer.aliasesTitle + person.aliases.join(),
             ),
             // titles
             BigText(
-              text: _detailsTitleContainer.titlesTitle + person.titles.join(),
+              text: _titlesContainer.titlesTitle + person.titles.join(),
             ),
             // name
             BigText(
-              text: _detailsTitleContainer.nameTitle + person.name,
+              text: _titlesContainer.nameTitle + person.name,
             ),
             // gender
             GenderIcon(gender: person.gender),
             // culture
             BigText(
-              text: _detailsTitleContainer.cultureTitle + person.culture,
+              text: _titlesContainer.cultureTitle + person.culture,
             ),
             // born
             IconText(
