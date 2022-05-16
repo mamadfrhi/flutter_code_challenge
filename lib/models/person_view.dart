@@ -1,4 +1,4 @@
-import '../resources/GenderEnum.dart';
+import '../resources/gender_enum.dart';
 
 class PersonView {
   final List<String> _titles;
