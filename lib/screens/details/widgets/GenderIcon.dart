@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import '../../../resources/GenderEnum.dart';
 
-class GenderIconWidget extends StatelessWidget {
+class GenderIcon extends StatelessWidget {
   final Gender gender;
-  const GenderIconWidget({Key? key, required this.gender}) : super(key: key);
+  const GenderIcon({Key? key, required this.gender}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

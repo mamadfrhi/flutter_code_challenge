@@ -1,4 +1,16 @@
 class Person {
+  final String url;
+  final String name;
+  final String gender;
+  final String culture;
+  final String born;
+  final String died;
+  final List<String>? titles;
+  final List<String>? aliases;
+  final String father;
+  final String mother;
+  final String spouse;
+
   Person({
     required this.url,
     required this.name,
@@ -12,18 +24,6 @@ class Person {
     required this.mother,
     required this.spouse,
   });
-
-  String url;
-  String name;
-  String gender;
-  String culture;
-  String born;
-  String died;
-  List<String>? titles;
-  List<String>? aliases;
-  String father;
-  String mother;
-  String spouse;
 
   factory Person.fromJson(Map<String, dynamic> json) => Person(
       url: json["url"],

@@ -1,16 +1,18 @@
-// ignore: file_names
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_code_challenge/bloc/home_bloc.dart';
 import 'package:flutter_code_challenge/models/PersonView.dart';
-import '../details/Details.dart';
+import 'PersonCard.dart';
 
 class HomeListWidget extends StatelessWidget {
+  final List<PersonView> persons;
+  final BuildContext parentContext;
+
   const HomeListWidget(
       {Key? key, required this.persons, required this.parentContext})
       : super(key: key);
-  final List<PersonView> persons;
-  final BuildContext parentContext;
 
   @override
   Widget build(BuildContext context) {
@@ -21,20 +23,8 @@ class HomeListWidget extends StatelessWidget {
         if (index == persons.length) {
           return _loadMoreButton();
         }
-        return Card(
-          child: ListTile(
-            title: Text(persons[index].name),
-            subtitle: Text(persons[index].gender.name.toString()),
-            trailing: persons[index].alive()
-                ? null
-                : const Icon(
-                    Icons.heart_broken,
-                    color: Colors.black,
-                  ),
-            enabled: persons[index].hasDetail(),
-            onTap: () => _navigateToDetailPage(parentContext, persons[index]),
-          ),
-        );
+        return PersonCard(
+            person: persons[index], grandParentCtx: parentContext);
       },
     );
   }
@@ -49,16 +39,4 @@ class HomeListWidget extends StatelessWidget {
           bloc.add(FetchPersonsEvent());
         });
   }
-
-  void _navigateToDetailPage(ctx, person) async {
-    Navigator.of(ctx).push(
-      MaterialPageRoute(
-        builder: (_) => Details(
-          person: person,
-        ),
-      ),
-    );
-  }
 }
-
-// TODO: make separate widget for Card
