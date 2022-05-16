@@ -1,7 +1,7 @@
 import 'dart:convert';
-import 'package:flutter_code_challenge/models/PersonView.dart';
+import 'package:flutter_code_challenge/models/person_view.dart';
 import 'package:http/http.dart';
-import '../models/Person.dart';
+import '../models/person.dart';
 
 class PersonsService {
   /// Peroperteis

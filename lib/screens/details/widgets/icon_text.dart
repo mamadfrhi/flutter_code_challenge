@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'BigText.dart';
+import 'big_text.dart';
 
 class IconText extends StatelessWidget {
   final IconData iconData;

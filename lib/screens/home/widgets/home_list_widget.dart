@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_code_challenge/bloc/home_bloc.dart';
-import 'package:flutter_code_challenge/models/PersonView.dart';
-import 'PersonCard.dart';
+import 'package:flutter_code_challenge/models/person_view.dart';
+import 'person_card.dart';
 
 class HomeListWidget extends StatelessWidget {
   final List<PersonView> persons;

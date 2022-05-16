@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../resources/GenderEnum.dart';
+import '../../../resources/gender_enum.dart';
 
 class GenderIcon extends StatelessWidget {
   final Gender gender;

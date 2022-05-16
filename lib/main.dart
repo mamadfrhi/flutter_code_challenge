@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_code_challenge/screens/home/Home.dart';
-import 'package:flutter_code_challenge/services/PersonsServices.dart';
+import 'package:flutter_code_challenge/screens/home/home_page.dart';
+import 'package:flutter_code_challenge/services/person_service.dart';
 
 void main() => runApp(const PersonsApp());
 
