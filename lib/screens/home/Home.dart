@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_code_challenge/bloc/home_bloc.dart';
-import 'package:flutter_code_challenge/screens/home/HomeListWidget.dart';
+import 'package:flutter_code_challenge/screens/home/widgets/HomeListWidget.dart';
 import 'package:flutter_code_challenge/services/PersonsServices.dart';
 
 class HomePage extends StatelessWidget {

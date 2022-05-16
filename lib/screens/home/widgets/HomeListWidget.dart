@@ -7,11 +7,12 @@ import 'package:flutter_code_challenge/models/PersonView.dart';
 import 'PersonCard.dart';
 
 class HomeListWidget extends StatelessWidget {
+  final List<PersonView> persons;
+  final BuildContext parentContext;
+
   const HomeListWidget(
       {Key? key, required this.persons, required this.parentContext})
       : super(key: key);
-  final List<PersonView> persons;
-  final BuildContext parentContext;
 
   @override
   Widget build(BuildContext context) {
