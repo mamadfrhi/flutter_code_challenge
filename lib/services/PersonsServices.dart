@@ -23,6 +23,18 @@ class PersonsService {
   }
 
   /// Conversion methods
+  List<Person> personsFromJson(String strJSON) {
+    final decodedBody = json.decode(strJSON);
+    List<Person> _persons = [];
+    decodedBody.forEach(
+      (person) {
+        final newPerson = Person.fromJson(person);
+        _persons.add(newPerson);
+      },
+    );
+    return _persons;
+  }
+
   List<PersonView> personsViewsFromPersons(List<Person> personsModel) {
     List<PersonView> _personsViewArray = [];
     for (var person in personsModel) {
@@ -41,17 +53,5 @@ class PersonsService {
       _personsViewArray.add(personView);
     }
     return _personsViewArray;
-  }
-
-  List<Person> personsFromJson(String strJSON) {
-    final decodedBody = json.decode(strJSON);
-    List<Person> _persons = [];
-    decodedBody.forEach(
-      (person) {
-        final newPerson = Person.fromJson(person);
-        _persons.add(newPerson);
-      },
-    );
-    return _persons;
   }
 }
